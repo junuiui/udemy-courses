@@ -47,3 +47,6 @@ React Components
 - `JSX` describes what the UI should look like
 - `React` figures out how to update it when count changes
 
+=======================================
+## Props
+- React allows you to `pass data to componenets` via a concept called `Props`
