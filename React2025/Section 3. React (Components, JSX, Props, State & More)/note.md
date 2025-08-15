@@ -50,3 +50,5 @@ React Components
 =======================================
 ## Props
 - React allows you to `pass data to componenets` via a concept called `Props`
+
+check out [react project for section 3](../../)
