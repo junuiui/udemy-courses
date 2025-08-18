@@ -25,7 +25,7 @@ function deriveActivePlayer(gameTurns) {
 }
 
 function App() {
-    const [players, setPlayers ] = useState({X: 'Plyaer 1', O: 'Plyaer 2'});
+    const [players, setPlayers ] = useState({X: 'Player 1', O: 'Player 2'});
     const [gameTurns, setGameTurns] = useState([]);
     // const [hasWinner, setHasWinner] = useState([]);
     // const [activePlayer, setActivePlayer] = useState('X');
