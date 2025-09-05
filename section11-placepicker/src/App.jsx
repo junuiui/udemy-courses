@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 import Places from './components/Places.jsx';
 import { AVAILABLE_PLACES } from './data.js';
@@ -6,16 +6,21 @@ import Modal from './components/Modal.jsx';
 import DeleteConfirmation from './components/DeleteConfirmation.jsx';
 import logoImg from './assets/logo.png';
 import { sortPlacesByDistance } from './loc.js'
-import { useEffect } from 'react';
+import { useCallback } from 'react';
+
+const storedIds = JSON.parse(localStorage.getItem('selectedPlaces')) || [];
+const storedPlaces = storedIds.map((id) =>
+    AVAILABLE_PLACES.find((place) => place.id === id));
 
 function App() {
-    const modal = useRef();
     const selectedPlace = useRef();
+    const [modalIsOpen, setModalIsOpen] = useState(false);
     const [availablePlaces, setAvailablePlaces] = useState([]);
-    const [pickedPlaces, setPickedPlaces] = useState([]);
+    const [pickedPlaces, setPickedPlaces] = useState(storedPlaces);
 
     // After all execution is done.
     // if dependency changes, it execute
+    // Only use to avoid inf loop
     useEffect(() => {
         navigator.geolocation.getCurrentPosition((position) => {
             const sortedPlaced = sortPlacesByDistance(
@@ -28,12 +33,12 @@ function App() {
     }, []);
 
     function handleStartRemovePlace(id) {
-        modal.current.open();
+        setModalIsOpen(true);
         selectedPlace.current = id;
     }
 
     function handleStopRemovePlace() {
-        modal.current.close();
+        setModalIsOpen(false);
     }
 
     function handleSelectPlace(id) {
@@ -44,22 +49,34 @@ function App() {
             const place = AVAILABLE_PLACES.find((place) => place.id === id);
             return [place, ...prevPickedPlaces];
         });
+
+        const storedID = JSON.parse(localStorage.getItem('selectedPlaces')) || [];
+
+        if (storedID.indexOf(id) === -1) {
+            localStorage.setItem('selectedPlaces', JSON.stringify([id, ...storedID]));
+        } // otherwise, do nothing
     }
 
-    function handleRemovePlace() {
+    const handleRemovePlace = useCallback(function handleRemovePlace() {
         setPickedPlaces((prevPickedPlaces) =>
             prevPickedPlaces.filter((place) => place.id !== selectedPlace.current)
         );
-        modal.current.close();
-    }
+        setModalIsOpen(false);
+        const storedIds = JSON.parse(localStorage.getItem('selectedPlaces')) || [];
+        localStorage.setItem('selectedPlaces', JSON.stringify(storedIds.filter((id) => {
+            id != selectedPlace.current
+        })));
+    }, []);
 
     return (
         <>
-            <Modal ref={modal}>
-                <DeleteConfirmation
-                    onCancel={handleStopRemovePlace}
-                    onConfirm={handleRemovePlace}
-                />
+            <Modal open={modalIsOpen} onClose={handleStopRemovePlace}>
+                {modalIsOpen && (
+                    <DeleteConfirmation
+                        onCancel={handleStopRemovePlace}
+                        onConfirm={handleRemovePlace}
+                    />
+                )}
             </Modal>
 
             <header>
