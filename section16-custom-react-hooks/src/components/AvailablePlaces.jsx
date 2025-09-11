@@ -27,7 +27,7 @@ export default function AvailablePlaces({ onSelectPlace }) {
     isFetching, 
     error, 
     fetchedData: availablePlaces, 
-     } = useFetch(fetchSortedPlaes, []);
+} = useFetch(fetchSortedPlaes, []);
 
   // useEffect(() => {
   //   async function fetchPlaces() {
