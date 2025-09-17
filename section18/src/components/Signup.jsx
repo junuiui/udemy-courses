@@ -54,7 +54,6 @@ function signupAction(prevState, formData) {
 }
 
 export default function Signup() {
-
   // pending - not needed for now
   const [formState, formAction] = useActionState(signupAction, { errors: null });
 
