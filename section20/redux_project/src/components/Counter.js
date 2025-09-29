@@ -5,15 +5,15 @@ import { counterActions } from '../store/index'
 
 const Counter = () => {
   const dispatch = useDispatch();
-  const counter = useSelector(state => state.counter);
-  const show = useSelector(state => state.showCounter);
+  const counter = useSelector(state => state.counter.counter);
+  const show = useSelector(state => state.counter.showCounter);
 
   const incrementHandler = () => {
     dispatch(counterActions.increment(1));
   }
 
   const decrementHandler = () => {
-    dispatch(counterActions.decrement());
+    dispatch(counterActions.decrement(1));
   }
 
   const increaseByFive = () => {
