@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-function HompePage() {
+function HomePage() {
   return (
     <>
       <h1>My Home Page</h1>
@@ -8,7 +8,7 @@ function HompePage() {
         Go to <Link to="/products">Page</Link>
       </p>
     </>
-  )
+  );
 }
 
-export default HompePage
+export default HomePage;
