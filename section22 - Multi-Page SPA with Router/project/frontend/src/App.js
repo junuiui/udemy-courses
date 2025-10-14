@@ -30,7 +30,7 @@ import NewEventPage from "./pages/events/newEvent";
 import EditEventPage from "./pages/events/EditEvent";
 import EventsRootLayout from "./pages/events/EventsRootLayout";
 import ErrorPage from "./pages/Error";
-import  {action as manipulateEventAction } from '../src/components/EventForm'
+import  {action as manipulateEventAction } from './components/EventForm'
 import NewsletterPage, { action as newsletterAction } from './pages/Newsletter';
 
 const router = createBrowserRouter([
