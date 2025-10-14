@@ -1,12 +1,18 @@
 {
   "events": [
     {
-      "title": "A new event",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/M%C3%BCnchen_Panorama.JPG/1024px-M%C3%BCnchen_Panorama.JPG",
-      "date": "2022-10-01",
-      "description": "Some awesome event!",
-      "id": "2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"
+      "title": "test1",
+      "image": "https://plus.unsplash.com/premium_photo-1683865776032-07bf70b0add1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1032",
+      "date": "2025-10-18",
+      "description": "test1",
+      "id": "5bee1981-7d9e-43eb-b81f-508084af149f"
     }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "test1@test.com",
+      "password": "$2a$12$pUvk467LX1jAb74OSgzkg.bd5g4M8nAme0NkovNDR7paOjue2KzZ6",
+      "id": "7f1842f5-766e-4ce8-9a28-3371eacdfb6d"
+    }
+  ]
 }
