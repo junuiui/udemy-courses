@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/github/udemy-courses/section26%20-%20Next.js/project-02/pages/test.js"],"sourcesContent":["export default function test(){\r\n\r\n  return <h1>Test</h1>\r\n}"],"names":[],"mappings":";;;;;;AAAe,SAAS;IAEtB,qBAAO,qKAAC;kBAAG;;;;;;AACb","debugId":null}}]
+}

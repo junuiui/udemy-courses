@@ -1,0 +1,83 @@
+[00:00:01.153] Server  LOG      ✓ Ready in 819ms
+[00:00:06.697] Server  WARN     ⚠ Cross origin request detected from 192.168.1.64 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:00:38.682] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./section26 - Next.js/project-02/pages/index.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:00:38.682] Browser LOG     Refreshing page data due to server-side change
+[00:00:38.862] Server  ERROR    ⨯ Error: The default export is not a React Component in page: "/"
+[00:00:38.911] Server  ERROR    ⨯ Error: The default export is not a React Component in page: "/"
+[00:00:38.974] Server  ERROR    ⨯ Error: The default export is not a React Component in page: "/"
+[00:00:39.021] Server  ERROR    ⨯ Error: The default export is not a React Component in page: "/"
+[00:00:39.241] Browser ERROR   uncaughtError: Error: The default export is not a React Component in page: "/"
+[00:00:42.907] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:00:42.907] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:00:43.002] Server  ERROR    ⨯ Error: The default export is not a React Component in page: "/"
+[00:00:43.047] Server  ERROR    ⨯ Error: The default export is not a React Component in page: "/"
+[00:00:43.107] Server  ERROR    ⨯ Error: The default export is not a React Component in page: "/"
+[00:00:43.156] Server  ERROR    ⨯ Error: The default export is not a React Component in page: "/"
+[00:00:43.258] Browser ERROR   uncaughtError: Error: The default export is not a React Component in page: "/"
+[00:00:50.393] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:00:50.393] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:00:59.783] Server  LOG      ✓ Compiled in 14ms
+[00:01:07.625] Server  LOG      ✓ Compiled in 3ms
+[00:04:30.901] Server  LOG      ✓ Compiled in 3ms
+[00:04:30.964] Browser LOG     Refreshing page data due to server-side change
+[00:04:32.317] Server  LOG      ✓ Compiled in 5ms
+[00:04:32.378] Browser LOG     Refreshing page data due to server-side change
+[00:04:34.496] Server  LOG      ✓ Compiled in 6ms
+[00:04:34.542] Browser LOG     Refreshing page data due to server-side change
+[00:04:39.972] Server  LOG      ✓ Compiled in 1ms
+[00:04:48.759] Server  LOG      ✓ Compiled in 5ms
+[00:04:55.775] Server  LOG      ✓ Compiled in 1ms
+[00:10:56.854] Server  LOG      ✓ Compiled in 4ms
+[00:12:05.366] Server  LOG      ✓ Compiled in 3ms
+[00:12:09.037] Server  LOG      ✓ Compiled in 2ms
+[00:12:16.455] Server  LOG      ✓ Compiled in 3ms
+[00:12:29.694] Server  LOG      ✓ Compiled in 1ms
+[00:12:47.931] Server  LOG      ✓ Compiled in 4ms
+[00:13:00.677] Server  LOG      ✓ Compiled in 8ms
+[00:13:03.139] Server  LOG      ✓ Compiled in 2ms
+[00:13:07.546] Server  LOG      ✓ Compiled in 3ms
+[00:13:18.403] Server  ERROR   ReferenceError: Fragment is not defined
+[00:13:18.407] Server  ERROR    ⨯ ReferenceError: Fragment is not defined
+[00:13:18.412] Server  ERROR    ⨯ ReferenceError: Fragment is not defined
+[00:13:18.511] Browser ERROR   uncaughtError: ReferenceError: Fragment is not defined
+[00:13:24.313] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:13:24.359] Server  LOG      ✓ Compiled in 13ms
+[00:13:59.725] Server  LOG      ✓ Compiled in 1ms
+[00:15:13.959] Server  LOG      ✓ Compiled in 2ms
+[00:15:16.234] Server  LOG      ✓ Compiled in 87ms
+[00:15:20.594] Server  LOG      ✓ Compiled in 45ms
+[00:15:24.697] Server  LOG      ✓ Compiled in 6ms
+[00:15:26.107] Server  ERROR   Warning: React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check your code at index.js:13.
+    at NewsPage
+    at MyApp (D:\github\udemy-courses\section26 - Next.js\project-02\pages\_app.js:3:18)
+    at StyleRegistry (D:\github\udemy-courses\section26 - Next.js\project-02\node_modules\styled-jsx\dist\index\index.js:449:36)
+    at PathnameContextProviderAdapter (webpack://next/dist/src/shared/lib/router/adapters.tsx:70:3)
+    at AppContainer (webpack://next/dist/src/server/render.tsx:737:27)
+    at AppContainerWithIsomorphicFiberStructure (webpack://next/dist/src/server/render.tsx:785:11)
+    at div
+    at Body (webpack://next/dist/src/server/render.tsx:1254:19)
+[00:15:26.110] Server  ERROR   Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+[00:15:26.114] Server  ERROR    ⨯ Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+[00:15:26.117] Server  ERROR    ⨯ Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+[00:15:26.219] Browser ERROR   uncaughtError: Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+[00:15:27.278] Server  ERROR   Warning: React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check your code at index.js:13.
+    at NewsPage
+    at MyApp (D:\github\udemy-courses\section26 - Next.js\project-02\pages\_app.js:3:18)
+    at StyleRegistry (D:\github\udemy-courses\section26 - Next.js\project-02\node_modules\styled-jsx\dist\index\index.js:449:36)
+    at PathnameContextProviderAdapter (webpack://next/dist/src/shared/lib/router/adapters.tsx:70:3)
+    at AppContainer (webpack://next/dist/src/server/render.tsx:737:27)
+    at AppContainerWithIsomorphicFiberStructure (webpack://next/dist/src/server/render.tsx:785:11)
+    at div
+    at Body (webpack://next/dist/src/server/render.tsx:1254:19)
+[00:15:27.281] Server  ERROR   Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+[00:15:27.284] Server  ERROR    ⨯ Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+[00:15:27.287] Server  ERROR    ⨯ Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+[00:15:27.381] Browser ERROR   uncaughtError: Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+[00:15:44.896] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:15:44.944] Server  LOG      ✓ Compiled in 6ms
+[00:16:34.518] Server  LOG      ✓ Compiled in 12ms

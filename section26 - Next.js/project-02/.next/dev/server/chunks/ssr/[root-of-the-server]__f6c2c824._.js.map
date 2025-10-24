@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 28, "column": 0}, "map": {"version":3,"sources":["file:///D:/github/udemy-courses/section26%20-%20Next.js/project-02/pages/news/%5BnewsId%5D.js"],"sourcesContent":["// [ ] - dynamic pages\r\n\r\nimport { useRouter } from 'next/router'\r\n\r\nfunction DetailPage() {\r\n\r\n  const router = useRouter();\r\n\r\n  // send a request to the backend API\r\n  // to fetch the news item with newsId\r\n\r\n\r\n  return <h1>{router.query.newsId}</h1>\r\n}\r\n\r\nexport default DetailPage;"],"names":[],"mappings":"AAAA,sBAAsB;;;;;;AAEtB;;;AAEA,SAAS;IAEP,MAAM,SAAS,IAAA,oLAAS;IAExB,oCAAoC;IACpC,qCAAqC;IAGrC,qBAAO,qKAAC;kBAAI,OAAO,KAAK,CAAC,MAAM;;;;;;AACjC;uCAEe","debugId":null}}]
+}
