@@ -1,34 +1,45 @@
 import MeetupList from '../components/meetups/MeetupList'
+import { MongoClient } from 'mongodb'
+import Head from 'next/head'  // allow to add head section 
+import { Fragment } from 'react';
 
-const DUMMY_MEETUPS = [
-  {
-    id: 'm1',
-    title: 'A 1 Meetup',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/8/81/Sungnyemun_Gate%2C_front%2C_2013.jpg',
-    address: '남대문, Korea',
-    description: 'This is the 1 meetup',
-  },
-  {
-    id: 'm2',
-    title: 'A 2 Meetup',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Republic_of_Korea_capitol.jpg',
-    address: '청와대, Korea',
-    description: 'This is the 2 meetup',
-  },
-  {
-    id: 'm3',
-    title: 'A 3 Meetup',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Sinbu-Dong.jpg',
-    address: '천안, Korea',
-    description: 'This is the 3 meetup',
-  }
-
-]
-
-function HomePage() {
+function HomePage(props) {
   return (
-      <MeetupList meetups={DUMMY_MEETUPS} />
+    <Fragment>
+      <Head>
+        <title>React Meetups</title>
+        <meta name="description" content='Browse a huge list of highly active React meetups!' />
+      </Head>
+      <MeetupList meetups={props.meetups} />
+    </Fragment>
   )
+}
+
+// only works in page components
+// wait until data is loaded
+export async function getStaticProps() {
+  // fetch data from an API
+
+  // 
+  const client = await MongoClient.connect('mongodb+srv://<username>:<password>@cluster0.mongodb.net/<dbname>?retryWrites=true&w=majority');
+
+  const db = client.db();
+  const meetupsCollection = db.collection('meetups');
+  const meetups = await meetupsCollection.find().toArray();
+
+  client.close();
+
+  return {
+    props: {
+      meetups: meetups.map(meetup => ({
+        title: meetup.title,
+        address: meetup.address,
+        image: meetup.image,
+        id: meetup._id.toString()
+      }))
+    },
+    revalidate: 1,
+  };
 }
 
 export default HomePage;
