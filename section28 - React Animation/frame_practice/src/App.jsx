@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 function App() {
   const [x, setX] = useState(0);
@@ -7,7 +8,20 @@ function App() {
 
   return (
     <div id="demo">
-      <div id="box" />
+      {/* when x, y updates it animates!! */}
+      <motion.div
+        id="box"
+        animate={
+          {
+            x: x, y: -y, rotate: rotate
+          }
+        }
+        transition={
+          {
+            duration: 0.5,
+            type: 'tween'
+          }
+        } />
 
       <div id="inputs">
         <p>
