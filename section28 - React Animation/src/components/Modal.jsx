@@ -6,9 +6,13 @@ export default function Modal({ title, children, onClose }) {
     <>
       <div className="backdrop" onClick={onClose} />
       <motion.dialog
-        initial={{ opacity: 0, y: 30 }} // allows us to set up the initial props
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 30 }} // ONLY this it NOT enough, has to use AnimatePresense in upper
+        variants={{ // useful for reusing
+          hidden: { opacity: 0, y: 30 },
+          visible: { opacity: 1, y: 0 }
+        }} 
+        initial="hidden" // allows us to set up the initial props
+        animate="visible"
+        exit="hidden" // ONLY this it NOT enough, has to use AnimatePresense in upper
         open
         className="modal"
       >
