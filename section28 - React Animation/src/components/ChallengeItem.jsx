@@ -30,7 +30,7 @@ export default function ChallengeItem({
 
   return (
     // layout, automatically animate the layout component
-    <motion.li layout>
+    <motion.li layout exit={{ y: -30, opacity: 0 }}>
       <article className="challenge-item">
         <header>
           <img {...challenge.image} />
@@ -51,7 +51,7 @@ export default function ChallengeItem({
               View Details{' '}
               {/* This should be animated! */}
               <motion.span
-                animate={{rotate: !isExpanded ? 0 : 180}}
+                animate={{ rotate: !isExpanded ? 0 : 180 }}
                 className="challenge-item-details-icon">
                 &#9650;
               </motion.span>
