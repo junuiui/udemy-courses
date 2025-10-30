@@ -25,7 +25,7 @@ export default function Header() {
         <h1>Your Challenges</h1>
         {/* For button animation */}
         <motion.button
-          whileHover={{ scale: 1.2 }}
+          whileHover={{ scale: 1.2,  }} // backgroundColor: '#7b1179' can be added
           transition={{ type: 'spring', stiffness: 500 }}
           onClick={handleStartAddNewChallenge}
           className="button"
