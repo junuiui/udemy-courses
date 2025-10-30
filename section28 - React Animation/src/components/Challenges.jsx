@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-
+import { motion } from 'framer-motion';
 import { ChallengesContext } from '../store/challenges-context.jsx';
 import ChallengeItem from './ChallengeItem.jsx';
 import ChallengeTabs from './ChallengeTabs.jsx';
