@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion' // meant to be used as WRAPPER
 
 import NewChallenge from './NewChallenge.jsx';
 
@@ -15,13 +16,22 @@ export default function Header() {
 
   return (
     <>
-      {isCreatingNewChallenge && <NewChallenge onDone={handleDone} />}
+      {/* Added for closing animation */}
+      <AnimatePresence>
+        {isCreatingNewChallenge && <NewChallenge onDone={handleDone} />}
+      </AnimatePresence>
 
       <header id="main-header">
         <h1>Your Challenges</h1>
-        <button onClick={handleStartAddNewChallenge} className="button">
+        {/* For button animation */}
+        <motion.button
+          whileHover={{ scale: 1.2 }}
+          transition={{ type: 'spring', stiffness: 500 }}
+          onClick={handleStartAddNewChallenge}
+          className="button"
+        >
           Add Challenge
-        </button>
+        </motion.button>
       </header>
     </>
   );
