@@ -1,5 +1,5 @@
 import { useContext, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useAnimate, stagger } from 'framer-motion';
 
 import { ChallengesContext } from '../store/challenges-context.jsx';
 import Modal from './Modal.jsx';
@@ -9,6 +9,9 @@ export default function NewChallenge({ onDone }) {
   const title = useRef();
   const description = useRef();
   const deadline = useRef();
+
+  // imperative animation!
+  const [scope, animate] = useAnimate();
 
   const [selectedImage, setSelectedImage] = useState(null);
   const { addChallenge } = useContext(ChallengesContext);
@@ -32,6 +35,13 @@ export default function NewChallenge({ onDone }) {
       !challenge.deadline.trim() ||
       !challenge.image
     ) {
+      // targetting the css
+      animate(
+        'input, textarea',
+        { x: [-10,0,10,0] },
+        // spring is NOT working, needs to change to keyframes
+        { type: 'keyframes', duration: 0.2, delay: stagger(0.05) }
+      );
       return;
     }
 
@@ -41,7 +51,8 @@ export default function NewChallenge({ onDone }) {
 
   return (
     <Modal title="New Challenge" onClose={onDone}>
-      <form id="new-challenge" onSubmit={handleSubmit}>
+      {/* ref needed to use useAnimate */}
+      <form id="new-challenge" onSubmit={handleSubmit} ref={scope}> 
         <p>
           <label htmlFor="title">Title</label>
           <input ref={title} type="text" name="title" id="title" />
@@ -68,7 +79,7 @@ export default function NewChallenge({ onDone }) {
             <motion.li
               variants={{ // imported from the parent (Modal.jsx)
                 hidden: { opacity: 0, scale: 0.5 },
-                visible: { opacity: 1, scale: [0.8, 1.3, 1] } // set the keyframes by []
+                visible: { opacity: 1, scale: 0.3 } // set the keyframes by []
               }}
               exit={{ opacity: 1, scale: 1 }}
               transition={{ type: 'spring' }}
