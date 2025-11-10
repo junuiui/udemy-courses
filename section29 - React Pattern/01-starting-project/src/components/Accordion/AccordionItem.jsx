@@ -8,6 +8,8 @@ export function useAccordingItemContext() {
   if (!ctx) {
     throw new Error('Item components Error');
   }
+
+  
 }
 
 export default function AccordionItem({ id, className, children }) {
