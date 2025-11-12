@@ -36,3 +36,8 @@ Testing
   - `React Testing Library`
 
 - Both tools are already set up for your when using create-react-app
+
+## Writing Tests - The Three 'A's
+- `Arrange`: Set up the test data, test conditions and test environment
+- `Act`: Run logic that should be tested (e.g., execute funtion)
+- `Assert`: Compare execution results with expected results
