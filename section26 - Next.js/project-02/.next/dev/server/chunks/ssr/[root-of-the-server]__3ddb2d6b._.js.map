@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/github/udemy-courses/section26%20-%20Next.js/project-02/pages/news/index.js"],"sourcesContent":["// domain.com/news/...\r\n\r\nimport Link from \"next/link\";\r\nimport { Fragment } from \"react/jsx-runtime\";\r\n\r\nfunction NewsPage() {\r\n\r\n  return (\r\n    <Fragment>\r\n      <h1>News Page</h1>\r\n      <ul>\r\n        {/* <a href> sends a new HTTP request */}\r\n        <li>\r\n          <Link href=\"/news/1\">\r\n            list 1...\r\n          </Link>\r\n        </li>\r\n      </ul>\r\n    </Fragment>\r\n  )\r\n}\r\n\r\nexport default NewsPage;"],"names":[],"mappings":"AAAA,sBAAsB;;;;;;AAEtB;AACA;;;;AAEA,SAAS;IAEP,qBACE,qKAAC,mJAAQ;;0BACP,qKAAC;0BAAG;;;;;;0BACJ,qKAAC;0BAEC,cAAA,qKAAC;8BACC,cAAA,qKAAC,gLAAI;wBAAC,MAAK;kCAAU;;;;;;;;;;;;;;;;;;;;;;AAO/B;uCAEe","debugId":null}}]
-}
