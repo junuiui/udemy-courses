@@ -33,12 +33,12 @@ TypeScript Course Note
 - npm init
 
 ### TS vs JS
-| Feature | JavaSCript | TypeScript |
-| --- | --- | --- |
-|How are types bound | Dynamically | Statically |
-|Types automatically converted? | Yes | No (at times) |
-|When are types checked? | Runtime | Compile Time |
-|When errors surface? | Runtime | Compile Time |
+| Feature                        | JavaSCript  | TypeScript    |
+| ------------------------------ | ----------- | ------------- |
+| How are types bound            | Dynamically | Statically    |
+| Types automatically converted? | Yes         | No (at times) |
+| When are types checked?        | Runtime     | Compile Time  |
+| When errors surface?           | Runtime     | Compile Time  |
 
 ## Primitive Types
 - in JS, a primitive is data that is not an object and has no methods or properties. <br>
@@ -115,8 +115,18 @@ A primitive values is represented directly at the lowest level of the language i
         console.log(user.getId()); // 1234
         ```
 
+## Type System
+- New types
+  - `any`
+  - `unkown`
+  - `Custom Types`
+  - `union`
+    - union of two types ( `type1 || type2` )
+- Duck Typing
+  - used by ts for inference of types
 
 
 # Sections
-- [Section 1](#section-1---typescript-basic) 
-- [Section 2](#primitive-types)
+- [Section 1 - Basic](#section-1---typescript-basic) 
+- [Section 2 - Primitive Types](#primitive-types)
+- [Section 3 - Type System](#type-system) - [03_example](/Typecript/03_Type%20System/index.ts)
