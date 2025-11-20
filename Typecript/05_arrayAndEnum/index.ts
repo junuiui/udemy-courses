@@ -107,3 +107,28 @@ enum Permission {
     A = RW | D // 7
 }
 
+// Enums as Unions and Types
+enum ShapeKind {
+    Circle = "circle",
+    Square = "square",
+}
+
+type Circle = {
+    kind: ShapeKind.Circle;
+    radius: number
+}
+
+type Square = {
+    kind: ShapeKind.Square;
+    side: number;
+}
+
+let circle: Circle = {
+    radius: 100, 
+    // kind: ShapeKind.Square; // Error, need to be circle
+    kind: ShapeKind.Circle,
+}
+
+function printShape(shape: ShapeKind /** circle | Square */) {
+    console.log(shape)
+}
