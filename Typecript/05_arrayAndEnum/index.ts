@@ -43,28 +43,67 @@ const stringboolsnumbers: StringBooleansNumber = ["h", true, true, false, false,
 
 ////////////
 // Readonly Arrays and Tuples
+let number: readonly number[] = [1, 2, 3]
+// number.push(2) // readonly!! 
 
+type ReadOnlyTuple = readonly [string, string, number] // cannot modify
+let person2: ReadOnlyTuple = ['nmae', 'last', 10];
+// person2[0] = "mark" // readonly!!
 
+type array_a = Readonly<string[]>;
+type array_b = ReadonlyArray<string | number> // union
+type array_c = ReadonlyArray<string & number> // intersection, NOT POSSIBLE, since both primitives
+
+type tuple_a = Readonly<[number, string, number]>;
 
 ////////////
 // Enums
+const STATUS_LOADING = "loading";
+const STATUS_STOPPED = "stopped";
 
+enum Direction {
+    Up,     // value of 0
+    Down,   // value of 1
+    Left,   // value of 2
+    Right,  // value of 3
+}
 
-////////////
-// Strictly Typing Array
+enum Roles {
+    ADMIN = "admin",
+    AUTHOR = "author",
+    EDITOR = "editor",
+}
 
+type Person = {
+    name: string,
+    role: Roles
+}
 
-////////////
-// Strictly Typing Array
+let person_2 = {
+    name: "hello",
+    role: Roles.ADMIN,
+}
 
+// not compiled
+const enum Roles2 {
+    ADMIN = "admin",
+    AUTHOR = "author",
+    EDITOR = "editor",
+}
 
-////////////
-// Strictly Typing Array
+// object
+const oRoles = {
+    ADMIN: "admin",
+    AUTHOR: "author",
+    EDITOR: "editor",
+} as const // as const makes CONST 
 
+// Computed
+enum Permission {
+    R = 1,
+    W = 2,
+    RW = R + W,
+    D = 4,
+    A = RW | D // 7
+}
 
-////////////
-// Strictly Typing Array
-
-
-////////////
-// Strictly Typing Array
