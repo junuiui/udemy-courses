@@ -1,6 +1,23 @@
 TypeScript Course Note
 ===
 
+# Sections
+- [TypeScript Course Note](#typescript-course-note)
+- [Sections](#sections)
+  - [Section 1 - TypeScript Basic](#section-1---typescript-basic)
+    - [How Programs work in JavaScript](#how-programs-work-in-javascript)
+    - [How Program work in TypeScript](#how-program-work-in-typescript)
+    - [Advantage](#advantage)
+    - [Disadvanges](#disadvanges)
+    - [Converting](#converting)
+    - [Creating project](#creating-project)
+    - [TS vs JS](#ts-vs-js)
+  - [Primitive Types](#primitive-types)
+  - [Type System](#type-system)
+  - [Objects](#objects)
+  - [Array \& Enums](#array--enums)
+
+
 ## Section 1 - TypeScript Basic
 ### How Programs work in JavaScript
 - Procedure
@@ -125,8 +142,13 @@ A primitive values is represented directly at the lowest level of the language i
 - Duck Typing
   - used by ts for inference of types
 
+check [example](./03_Type%20System/index.ts)
 
-# Sections
-- [Section 1 - Basic](#section-1---typescript-basic) 
-- [Section 2 - Primitive Types](#primitive-types)
-- [Section 3 - Type System](#type-system) - [03_example](/Typecript/03_Type%20System/index.ts)
+## Objects
+
+check [example](./04_Objects/index.ts)
+
+
+## Array & Enums
+
+check [example](./05_arrayAndEnum/index.ts)
