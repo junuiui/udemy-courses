@@ -132,3 +132,33 @@ let circle: Circle = {
 function printShape(shape: ShapeKind /** circle | Square */) {
     console.log(shape)
 }
+
+// ==============================================================================
+
+// Practice Questions
+//* 1.  Create an array numbers that only accepts numbers and another array strings 
+//      that only accepts strings.
+const numArr: number[] = []
+const strArr: string[] = []
+
+//* 2.  Create a tuple person that holds a string (name) and a number (age).
+const tuplePerson: [string, number] = ['Mark', 30]
+
+//* 3.  (1) Create a readonly array colors that holds strings and a (2) readonly tuple point 
+//      that holds two numbers (x, y). Attempt to modify their elements and observe the TypeScript error.
+type color = string
+let rArr: readonly color[] = []
+
+let tPoints: readonly [number, number] = [1, 2]
+
+//* 4.  Create an enum called StatusEnum that should 3 properties Active, Inactive, Pending
+enum StatusEnum {
+    Active, Inactive, Pending
+}
+
+//* 5.  Create an object as const called Status with the same structure as an StatusEnum
+let Status = {
+    Active: 'active',
+    Inactive: 'inactive',
+    Pending: 'pending',
+} as const
