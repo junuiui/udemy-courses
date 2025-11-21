@@ -16,6 +16,7 @@ TypeScript Course Note
   - [Type System](#type-system)
   - [Objects](#objects)
   - [Array \& Enums](#array--enums)
+  - [Functions](#functions)
 
 
 ## Section 1 - TypeScript Basic
@@ -152,3 +153,6 @@ check [example](./04_Objects/index.ts)
 ## Array & Enums
 
 check [example](./05_arrayAndEnum/index.ts)
+
+## Functions
+check [example](./06_Functions/index.ts)
