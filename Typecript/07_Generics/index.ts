@@ -55,15 +55,15 @@ logLength({ name: 'nmae', length: 30 }) // it works
 // Generics with Object
 type KeyValuePair<K, V> = {
     key: K,
-    value: V, 
+    value: V,
 }
 
-let stringnumberPair: KeyValuePair<string, number>  = {
+let stringnumberPair: KeyValuePair<string, number> = {
     key: "age",
     value: 30,
 };
 
-let numberArrayPair: KeyValuePair<number, string[]>  = {
+let numberArrayPair: KeyValuePair<number, string[]> = {
     key: 1234,
     value: ["a"],
 };
@@ -72,7 +72,7 @@ type HasID = {
     id: number;
 }
 
-function printID<T extends HasID>(obj: T){
+function printID<T extends HasID>(obj: T) {
     console.log(obj.id)
 }
 
@@ -89,9 +89,77 @@ printID({
 
 //////////////////////////////////////
 // keyof Type Operator
+type Events = {
+    id: number;
+    date: Date;
+    type: "indoor" | "outdoor"
+}
+
+type UnionOfKeysOfEvents = keyof Events;
+
+let typeOfEvents: UnionOfKeysOfEvents = "type";
+// let idOfEvents: UnionOfKeysOfEvents = "notid"; // not working
+
+// Index Signature
+type Numeric = {
+    [key: number]: string;
+};
+
+type NumericKeyOf = keyof Numeric;
+
+type NumberAndString = {
+    [key: string]: string;
+}
+
+type NumberAndStringKeyOf = keyof NumberAndString;
+
+let stringObject: NumberAndString = {
+    0: 'first',
+    second: "srcond"
+}
+
+type Person = {
+    name: string;
+    age: string;
+    address: string;
+}
+
+type PartialPerson = {
+    [P in keyof Person]?: Person[P] | null // k can be anything from Person
+}
+
+let partial: PartialPerson = {
+    name: "John"
+}
 
 //////////////////////////////////////
 // Generic Default Values
+async function fetchData<T = string>(url: string): Promise<T> {
+    const response = await fetch(url);
+    const data = await response.json()
+    return data;
+}
+
+async function fetchDefault() {
+    const data = await fetchData("https://jsonplaceholder.typicode.com/posts/1");
+    console.log(data);
+}
+
+fetchDefault();
+
+type Post = {
+    userId: number,
+    id: number,
+    title: string,
+    body: string;
+}
+
+async function fetchPost() {
+    const post = await fetchData<Post>("https://jsonplaceholder.typicode.com/posts/1");
+    console.log(post)
+}
+
+fetchPost();
 
 //////////////////////////////////////
 // Implementing a Polymorphic Function
