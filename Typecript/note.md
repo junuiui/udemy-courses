@@ -17,6 +17,8 @@ TypeScript Course Note
   - [Objects](#objects)
   - [Array \& Enums](#array--enums)
   - [Functions](#functions)
+  - [Generic](#generic)
+    - [What are Generics?](#what-are-generics)
 
 
 ## Section 1 - TypeScript Basic
@@ -156,3 +158,8 @@ check [example](./05_arrayAndEnum/index.ts)
 
 ## Functions
 check [example](./06_Functions/index.ts)
+
+## Generic
+### What are Generics?
+- 
+check [example](./07_Generics/index.ts)
