@@ -162,13 +162,33 @@ async function fetchPost() {
 fetchPost();
 
 //////////////////////////////////////
-// Implementing a Polymorphic Function
+// Implementing a Polymorphic Function 
+// & Problems with Fucntion Overloads 
+// & Using Generics Instead of function overloads
+
+type Filter <T> = {
+    (array: T[], predicate: (item: T) => boolean): T[];
+
+}
+
+// custom filter
+const filter = <T>(array: T[], predicate: (item: T) => boolean): T[] => {
+    let result: T[] = [];
+    for (let i = 0; i < array.length; i++) {
+        if (predicate(array[i])) {
+            result.push(array[i])
+        }
+    }
+    return result;
+};
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 13, 12, 421, 5, 15, 4, 1]
+const predicate2 = (item: number) => { return item > 8 };
+
+console.log(filter(numbers, predicate2))
 
 //////////////////////////////////////
-// Problems with Fucntion Overloads
-
-//////////////////////////////////////
-// Using Generics Instead of function overloads
+// 
 
 //////////////////////////////////////
 // Practice
