@@ -18,7 +18,10 @@ TypeScript Course Note
   - [Array \& Enums](#array--enums)
   - [Functions](#functions)
   - [Generic](#generic)
-    - [What are Generics?](#what-are-generics)
+  - [Classes](#classes)
+    - [What is classes?](#what-is-classes)
+    - [Example](#example)
+    - [](#)
 
 
 ## Section 1 - TypeScript Basic
@@ -160,6 +163,48 @@ check [example](./05_arrayAndEnum/index.ts)
 check [example](./06_Functions/index.ts)
 
 ## Generic
-### What are Generics?
-- 
 check [example](./07_Generics/index.ts)
+
+## Classes
+### What is classes?
+- A class ia template or a blueprint of creating objects. It defines a set of properties and methods that are common to all objects of one type.
+
+### Example
+```ts
+let user = {
+    name: "John",
+    email: "john@email.com",
+    gret: () => {
+        console.log(`hello ${person.name}`)
+    }
+};
+
+let user2 = {
+    name: "Mark",
+    email: "mark@email.com",
+    gret: () => {
+        console.log(`hello ${person.name}`)
+    }
+};
+
+// PROBLEM: need to generate similar objects by hands
+```
+- Classes help you generate objecsts of a single type!!
+  > 1. use class (Blue Print)
+  > 2. new User()
+  > 3. user object
+
+    ```ts
+    // 1. Blue print
+    class User {
+        constructor(
+            public name: string,
+            public email: string) {}
+
+            public greet() {
+                console.log(this.name);
+            }
+        )
+    }
+    ```
+### 
