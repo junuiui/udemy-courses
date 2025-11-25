@@ -192,3 +192,20 @@ console.log(filter(numbers, predicate2))
 
 //////////////////////////////////////
 // Practice
+// Implement the map function 
+
+/**
+ * 
+ * @T input type
+ * @U output type
+ * @returns 
+ */
+const myMap = <T, U>(array: T[], predicate: (item: T) => U): (U | T)[] => {
+    let result: U[] = [];
+    for (let i = 0; i < array.length; i++){
+        result.push(predicate(array[i]))
+    }
+    return result;
+}
+
+const numberss = [64,1,23,5];
