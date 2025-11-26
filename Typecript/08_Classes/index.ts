@@ -105,6 +105,5 @@ class EBook extends Book {
     }
 
 }
-
 //  * TODO: 8. Ensure that the yearPublished property in the Book class is optional and the ISBN property is readonly.
 

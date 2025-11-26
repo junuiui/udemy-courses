@@ -21,7 +21,7 @@ TypeScript Course Note
   - [Classes](#classes)
     - [What is classes?](#what-is-classes)
     - [Example](#example)
-    - [](#)
+    - [What is Access Modifier?](#what-is-access-modifier)
 
 
 ## Section 1 - TypeScript Basic
@@ -207,4 +207,8 @@ let user2 = {
         )
     }
     ```
-### 
+### What is Access Modifier?
+- control whether certain methods or properties are visible to code outside te class
+    1. Public (`default`) - any
+    2. Protected - within the class (child class)
+    3. Private - only within the class
