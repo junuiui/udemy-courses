@@ -22,6 +22,7 @@ TypeScript Course Note
     - [What is classes?](#what-is-classes)
     - [Example](#example)
     - [What is Access Modifier?](#what-is-access-modifier)
+    - [Mixins](#mixins)
 
 
 ## Section 1 - TypeScript Basic
@@ -212,3 +213,10 @@ let user2 = {
     1. Public (`default`) - any
     2. Protected - within the class (child class)
     3. Private - only within the class
+
+### Mixins
+- Pattern to add properties and methods from one class to another. 
+- They use functions that take a class and return a new class with the combined features
+  - Example
+    - `User` -> `Mixin` (adds Timestamps) -> `User + Timestamp`
+    - `Book` -> `Mixin` (adds Timestamps) -> `Book + Timestamp` ==> NOT REPEATING

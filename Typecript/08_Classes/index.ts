@@ -132,9 +132,35 @@ class Box<T> {
         this._value = newValue;
     }
 
-    public setDifferentValue<U>(newValue: U){
+    public setDifferentValue<U>(newValue: U) {
         return new Box<U>(newValue)
     }
+}
+
+
+// Mixin
+type Construtor = new (...args: any[]) => {};
+
+// T extends constructor
+function Timestamp<T extends Construtor>(Base: T) {
+    return class extends Base {
+        protected timestamp: Date = new Date()
+    }
+}
+
+class UserMixin {
+    constructor(
+        public name: string,
+
+    ) { }
+}
+
+class UserWithTimeStamp extends Timestamp(UserMixin) {
+    constructor(name: string, public age: number) {
+        super(name)
+    }
+
+    // ... can add more 
 }
 
 
