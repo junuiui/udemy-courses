@@ -23,6 +23,7 @@ TypeScript Course Note
     - [Example](#example)
     - [What is Access Modifier?](#what-is-access-modifier)
     - [Mixins](#mixins)
+  - [Abstract Class](#abstract-class)
 
 
 ## Section 1 - TypeScript Basic
@@ -220,3 +221,11 @@ let user2 = {
   - Example
     - `User` -> `Mixin` (adds Timestamps) -> `User + Timestamp`
     - `Book` -> `Mixin` (adds Timestamps) -> `Book + Timestamp` ==> NOT REPEATING
+
+check [example](./08_Classes/index.ts)
+
+## Abstract Class
+
+
+
+check [example](./09_Abstract-Classes/index.ts)
