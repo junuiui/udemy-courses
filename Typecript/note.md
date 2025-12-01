@@ -24,6 +24,9 @@ TypeScript Course Note
     - [What is Access Modifier?](#what-is-access-modifier)
     - [Mixins](#mixins)
   - [Abstract Class](#abstract-class)
+  - [TypeScript Compiler](#typescript-compiler)
+    - [File and Compiler Options](#file-and-compiler-options)
+    - [tsconfig.json](#tsconfigjson)
 
 
 ## Section 1 - TypeScript Basic
@@ -225,7 +228,59 @@ let user2 = {
 check [example](./08_Classes/index.ts)
 
 ## Abstract Class
-
-
-
 check [example](./09_Abstract-Classes/index.ts)
+
+## TypeScript Compiler
+check [example](./10_Compiler/index.ts)
+
+### File and Compiler Options
+- `File Options`: Options related to how TypeScript treates files
+- `Type Checking Options`: Options that alter TS's behaviour related to type checking and other code related features that TS offers
+
+### tsconfig.json
+- check [tsconfig.json](./10_Compiler/tsconfig.json)
+
+- Exclude & Include
+    ```json
+    "exclude": [
+            "app2.ts",
+            "node_modules",
+            "*.exclude.ts",
+            "**/*.exclude.ts"
+        ],
+    "include": [
+            "src"
+        ],
+    ```
+
+- rootDir and outDir
+    ```json
+    "rootDir": "./src_path"
+    "outDir": "./dist_path" 
+    ```
+
+- target
+    ```json
+    "target": "es5"
+    ```
+    - check [tsconfig/bases](https://github.com/tsconfig/bases)
+  
+- Core Libraries
+  - to include libraries that target does not support
+    ```json
+    "lib":["dom", "dom.iterable", "esnext"],
+    "target": "es5"
+    ```
+- Type Checking
+    ```json
+    "noUnusedLocals": true, /* Enable error reporting when local variables aren't read. */
+    "noUnusedParameters": true, /* Raise an error when a function parameter isn't read. */
+
+    // ... more
+    ```
+
+- Source map
+    ```json
+    "sourceMap": true, /* Create source map files for emitted JavaScript files. */
+    ```
+    - useful when need to check the source of the error
