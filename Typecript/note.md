@@ -27,6 +27,7 @@ TypeScript Course Note
   - [TypeScript Compiler](#typescript-compiler)
     - [File and Compiler Options](#file-and-compiler-options)
     - [tsconfig.json](#tsconfigjson)
+  - [Prototypes and Objects](#prototypes-and-objects)
 
 
 ## Section 1 - TypeScript Basic
@@ -284,3 +285,8 @@ check [example](./10_Compiler/index.ts)
     "sourceMap": true, /* Create source map files for emitted JavaScript files. */
     ```
     - useful when need to check the source of the error
+
+## Prototypes and Objects
+
+
+check [example](./11_Prototypes%20and%20Objects/index.js)
