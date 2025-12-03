@@ -28,6 +28,8 @@ TypeScript Course Note
     - [File and Compiler Options](#file-and-compiler-options)
     - [tsconfig.json](#tsconfigjson)
   - [Prototypes and Objects](#prototypes-and-objects)
+    - [What is property](#what-is-property)
+    - [Property Descriptors](#property-descriptors)
 
 
 ## Section 1 - TypeScript Basic
@@ -287,6 +289,14 @@ check [example](./10_Compiler/index.ts)
     - useful when need to check the source of the error
 
 ## Prototypes and Objects
+### What is property
+- fundamental concept used across various disciplines, including programming, mathematics, and general language
+- Properties are essentially variables that belong to an object.
 
+### Property Descriptors
+- `value`: value of the property
+- `writable` (boolean): whether this peroperty in question is writable or not
+- `enumerable` (boolean): whether you can enumerate or loop through this property
+- `configurable` (boolean): tells the user has permission to change property descriptor such as to change the value of writable and enumrable settings
 
 check [example](./11_Prototypes%20and%20Objects/index.js)
