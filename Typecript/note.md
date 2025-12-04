@@ -30,6 +30,10 @@ TypeScript Course Note
   - [Prototypes and Objects](#prototypes-and-objects)
     - [What is property](#what-is-property)
     - [Property Descriptors](#property-descriptors)
+  - [Decorators (Stage 3)](#decorators-stage-3)
+    - [What is Decorator?](#what-is-decorator)
+    - [Why do we use Decorator?](#why-do-we-use-decorator)
+    - [Types of Decorators](#types-of-decorators)
 
 
 ## Section 1 - TypeScript Basic
@@ -300,3 +304,50 @@ check [example](./10_Compiler/index.ts)
 - `configurable` (boolean): tells the user has permission to change property descriptor such as to change the value of writable and enumrable settings
 
 check [example](./11_Prototypes%20and%20Objects/index.js)
+
+## Decorators (Stage 3)
+### What is Decorator?
+- Special function that attaches extra behaviour to classes, methodsk, properties, or parameters
+- like a sticker
+
+### Why do we use Decorator?
+- Reduce repeated code
+- Add behaviours cleanly
+- Apply cross-cuitting concerns (logging, validation, permissions)
+
+### Types of Decorators
+1. `Class` Decorator
+    - Adds behavour to a class or modifies it
+    ```ts
+    function Logger(target: any) {
+        console.log("Decorated:", target.name);
+        }
+
+        @Logger
+        class Person {}
+    ```
+2. `Method` Decorator
+    - Wraps or modifies a method's behaviour
+    ```ts
+    function Log(target: any, method: string, descriptor: PropertyDescriptor) {
+        const original = descriptor.value;
+
+        descriptor.value = function (...args: any[]) {
+            console.log("Calling:", method);
+            return original.apply(this, args);
+        };
+    }
+
+    class Calculator {
+        @Log
+        add(a: number, b: number) {
+            return a + b;
+        }
+    }
+    ```
+3. `Property` Decorator
+    - Used on class fields (variables)
+4. `Parameter` Decorators
+    - Used to inspect or modify method parameters
+
+check [example](./12_Decorators_stage3/index.js)
