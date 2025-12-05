@@ -1,4 +1,4 @@
-function methodLogger() {
+function methodLogger(logPrefix: string) {
     // 1. Creating Decorator
     return function (originalMethod: any, context: any) {
 
@@ -11,7 +11,7 @@ function methodLogger() {
             const result = originalMethod.call(this, ...args);
 
             // 필요하면 result 반환 가능
-            return result;
+            // return result;
         }
     }
 }
@@ -85,7 +85,7 @@ class Person {
     }
 
     @bound
-    @methodLogger
+    @methodLogger("LOG:")
     greet(str: string): void {
         console.dir(this)
         console.log(`${str} my name is ${this.name}`)
@@ -96,4 +96,4 @@ let user: Person = new Person("Jun");
 user.greet("Hello"); // replaced
 
 const greet = user.greet("Hello");
-greet("Hello");
+// greet("Hello");

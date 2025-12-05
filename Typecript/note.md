@@ -34,6 +34,7 @@ TypeScript Course Note
     - [What is Decorator?](#what-is-decorator)
     - [Why do we use Decorator?](#why-do-we-use-decorator)
     - [Types of Decorators](#types-of-decorators)
+  - [Advanced Concepts](#advanced-concepts)
 
 
 ## Section 1 - TypeScript Basic
@@ -351,3 +352,7 @@ check [example](./11_Prototypes%20and%20Objects/index.js)
     - Used to inspect or modify method parameters
 
 check [example](./12_Decorators_stage3/index.js)
+
+## Advanced Concepts
+
+check [example](./14_Advanced%20Concepts/index.ts)
