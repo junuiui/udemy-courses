@@ -35,6 +35,20 @@ TypeScript Course Note
     - [Why do we use Decorator?](#why-do-we-use-decorator)
     - [Types of Decorators](#types-of-decorators)
   - [Advanced Concepts](#advanced-concepts)
+  - [Utility Types](#utility-types)
+    - [What is Utility Types?](#what-is-utility-types)
+    - [Why needed?](#why-needed)
+    - [Partial\<T\>](#partialt)
+    - [Required\<T\>](#requiredt)
+    - [Readonly\<T\>](#readonlyt)
+    - [Pick\<T, K\>](#pickt-k)
+    - [Omit\<T, K\>](#omitt-k)
+    - [Record\<K, T\>](#recordk-t)
+    - [Exclude\<T, U\>](#excludet-u)
+    - [Extract\<T, U\>](#extractt-u)
+    - [NonNullable\<T\>](#nonnullablet)
+    - [Awaited\<T\>](#awaitedt)
+    - [String Manipulation Types](#string-manipulation-types)
 
 
 ## Section 1 - TypeScript Basic
@@ -356,3 +370,203 @@ check [example](./12_Decorators_stage3/index.js)
 ## Advanced Concepts
 
 check [example](./14_Advanced%20Concepts/index.ts)
+
+## Utility Types
+### What is Utility Types?
+- Predefeind generic types that can perform common types transformation in TypeScript. 
+- Built into TS and are used to manipulate other ytpes and create new types.
+- Can create new types by applying transformations to existing types. 
+- Help avoid code duplication and make it easier to write generic code
+
+### Why needed?
+```ts
+type Teacher = {
+    id: number;
+    name: string;
+    bio: string;
+    email: string
+}
+```
+- 상황별로 필요한 필드가 다름
+  - 생성할 때는 id 없음
+  - 수정할 때는 일부만 필요
+  - 읽기 전용으로 막고 싶을 때
+- 매번 새 타입으로 만들면 Duplication!!
+
+### Partial\<T>
+- 모든 속성을 optional 
+```ts
+interface Todo {
+  title: string;
+  description: string;
+}
+ 
+function updateTodo(todo: Todo, fieldsToUpdate: Partial<Todo>) {
+  return { ...todo, ...fieldsToUpdate };
+}
+ 
+const todo1 = {
+  title: "organize desk",
+  description: "clear clutter",
+};
+ 
+const todo2 = updateTodo(todo1, {
+  description: "throw out trash",
+});
+```
+
+### Required\<T>
+- 모든 속성을 필수로
+```ts
+interface Props {
+  a?: number;
+  b?: string;
+}
+ 
+const obj: Props = { a: 5 };
+ 
+const obj2: Required<Props> = { a: 5 };
+// Property 'b' is missing in type '{ a: number; }' but required in type 'Required<Props>'.
+```
+
+### Readonly\<T>
+- 값 수정 불가
+```ts
+type ReadonlyTeacher = Readonly<Teacher>
+t.name = "New Name" // error
+```
+
+### Pick\<T, K>
+- 필요한 필드만 선택
+```ts
+interface Todo {
+  title: string;
+  description: string;
+  completed: boolean;
+}
+ 
+type TodoPreview = Pick<Todo, "title" | "completed">;
+ 
+const todo: TodoPreview = {
+  title: "Clean room",
+  completed: false,
+};
+ 
+todo;
+```
+
+### Omit\<T, K>
+- 특정 필드 제외
+```ts
+interface Todo {
+  title: string;
+  description: string;
+  completed: boolean;
+  createdAt: number;
+}
+ 
+type TodoPreview = Omit<Todo, "description">;
+ 
+const todo: TodoPreview = {
+  title: "Clean room",
+  completed: false,
+  createdAt: 1615544252770,
+};
+ 
+todo;
+ 
+const todo: TodoPreview
+ 
+type TodoInfo = Omit<Todo, "completed" | "createdAt">;
+ 
+const todoInfo: TodoInfo = {
+  title: "Pick up kids",
+  description: "Kindergarten closes at 5pm",
+};
+ 
+todoInfo;
+```
+
+### Record\<K, T>
+- key-value 구조
+```ts
+type CatName = "miffy" | "boris" | "mordred";
+ 
+interface CatInfo {
+  age: number;
+  breed: string;
+}
+ 
+const cats: Record<CatName, CatInfo> = {
+  miffy: { age: 10, breed: "Persian" },
+  boris: { age: 5, breed: "Maine Coon" },
+  mordred: { age: 16, breed: "British Shorthair" },
+};
+ 
+cats.boris; // const cats: Record<CatName, CatInfo>
+```
+- 다국어 JSON
+- 설정 객체
+
+### Exclude\<T, U>
+- 특정 타입 제거
+```ts
+type T0 = Exclude<"a" | "b" | "c", "a">;     
+// type T0 = "b" | "c"
+
+type T1 = Exclude<"a" | "b" | "c", "a" | "b">;  
+// type T1 = "c"
+```
+
+### Extract\<T, U>
+- 겹치는 것만 추출
+```ts
+type A = 'a' | 'b' | 'c'
+type B = 'b' | 'c' | 'd'
+
+type Common = Extract<A, B> // 'b' | 'c'
+```
+
+### NonNullable\<T>
+- Constructs a type by excluding null and undefined from Type.
+```ts
+type T0 = NonNullable<string | number | undefined>;
+//    ^?
+type T1 = NonNullable<string[] | null | undefined>;
+//    ^?
+```
+
+### Awaited\<T>
+- This type is meant to model operations like await in async functions, or the `.then()` method on Promises - specifically, the way that they recursively unwrap Promises.
+```ts
+const promise: Promise<string> = new Promise((res, rej)) => {
+    setTimeout(() => {
+        res("Done!");
+    }, 1000);
+}
+
+type AwaitedType = Awaited<typeof promise>
+```
+
+### String Manipulation Types
+```ts
+type Str = "aa" | "Bb" | "Cc" | "dD"
+```
+- Uppercase\<T>
+```ts
+type UppercaseStr = Uppercase<Str> // AA BB CC DD
+```
+- Lowercase\<T>
+```ts
+type LowercaseStr = Lowercase<Str> // aa bb cc dd
+```
+- Capitalize\<T>
+```ts
+type CapitalizeStr = Capitalize<Str> // Aa Bb Cc DD
+```
+- Uncapitalize\<T>
+```ts
+type UncapitalizeStr = Uncapitalize<Str> // aa bb cc dd
+```
+
+check [example](./15_Utility%20Types/index.ts)
