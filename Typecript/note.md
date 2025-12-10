@@ -50,6 +50,8 @@ TypeScript Course Note
     - [Awaited\<T\>](#awaitedt)
     - [String Manipulation Types](#string-manipulation-types)
   - [Creating Types From Types](#creating-types-from-types)
+  - [Namespace And Modules](#namespace-and-modules)
+    - [What is Namespace?](#what-is-namespace)
 
 
 ## Section 1 - TypeScript Basic
@@ -573,6 +575,11 @@ type UncapitalizeStr = Uncapitalize<Str> // aa bb cc dd
 check [example](./15_Utility%20Types/index.ts)
 
 ## Creating Types From Types
-
-
 check [example](./16_Creating%20Types%20From%20Types/index.ts)
+
+## Namespace And Modules
+### What is Namespace?
+- Way to organize and group related code, preventing name conflicts by encapsulating identifiers like variables, functions, and classes.
+
+check [example](./17_Namespace/index.ts)
+
