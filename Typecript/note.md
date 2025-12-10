@@ -52,6 +52,7 @@ TypeScript Course Note
   - [Creating Types From Types](#creating-types-from-types)
   - [Namespace And Modules](#namespace-and-modules)
     - [What is Namespace?](#what-is-namespace)
+    - [Use of Namespace / Modules](#use-of-namespace--modules)
 
 
 ## Section 1 - TypeScript Basic
@@ -581,5 +582,18 @@ check [example](./16_Creating%20Types%20From%20Types/index.ts)
 ### What is Namespace?
 - Way to organize and group related code, preventing name conflicts by encapsulating identifiers like variables, functions, and classes.
 
+### Use of Namespace / Modules
+```ts
+// name function name, can solve with namespace/module
+const add = (n1: number, n2: number) => {return n1 + n2}
+const add = (n1: string, n2: string) => {return n1 + n2}
+
+// MathUtil, StringUtils
+let sum = MathUtil.add(1, 2)
+let concat = StringUtil.add("hell", "o")
+```
+
+
 check [example](./17_Namespace/index.ts)
+
 
