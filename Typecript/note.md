@@ -53,6 +53,7 @@ TypeScript Course Note
   - [Namespace And Modules](#namespace-and-modules)
     - [What is Namespace?](#what-is-namespace)
     - [Use of Namespace / Modules](#use-of-namespace--modules)
+  - [Declaration Files](#declaration-files)
 
 
 ## Section 1 - TypeScript Basic
@@ -594,6 +595,31 @@ let concat = StringUtil.add("hell", "o")
 ```
 
 
-check [example](./17_Namespace/index.ts)
+check [example](./18_Namespace/index.ts)
 
+## Declaration Files
+- Contains the only Types 
+```js
+// calculator.js
+export function add(a,b) {
+    return a + b;
+}
+```
+
+```ts
+// app.ts
+import { add } from 'calculator.js'
+
+console.log(add(1,2)) // any, any type
+// after d.ts file, its number, number
+```
+
+```ts
+// calculator.d.ts
+// THIS IS Declaration file
+declare function add(a: number, b:number): number;
+```
+
+
+check [example](./19_Declaration%20Files/index.ts)
 
